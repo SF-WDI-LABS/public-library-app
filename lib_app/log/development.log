@@ -2244,3 +2244,6 @@ Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.4ms)
   [1m[35mLibrary Load (1.0ms)[0m  SELECT "libraries".* FROM "libraries" INNER JOIN "library_users" ON "libraries"."id" = "library_users"."library_id" WHERE "library_users"."user_id" = $1  [["user_id", 2]]
   [1m[36mLibrary Load (0.8ms)[0m  [1mSELECT  "libraries".* FROM "libraries"  ORDER BY "libraries"."id" ASC LIMIT 1[0m
   [1m[35mLibrary Load (0.7ms)[0m  SELECT  "libraries".* FROM "libraries"  ORDER BY "libraries"."id" ASC LIMIT 1
+  [1m[36m (14.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (11.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
