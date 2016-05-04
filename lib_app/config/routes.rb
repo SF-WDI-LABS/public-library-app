@@ -1,23 +1,22 @@
 Rails.application.routes.draw do
   root to: "users#index"
-
+#user custom crud
   get "/users", to: "users#index", as: "users"
-
   get "/users/new", to: "users#new", as: "new_user"
-
   post "/users", to: "users#create"
-
   get "/users/:id", to: "users#show", as: "user"
 
 
 
 
-
+#session custom crud
   get "/login", to: "sessions#new"
-
   get "/logout", to: "sessions#destroy"
   post "/sessions", to:"sessions#create"
 
+
+#libraries custom crud
+get "/libraries", to: "librarie#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
