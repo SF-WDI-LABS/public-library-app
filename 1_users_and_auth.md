@@ -444,7 +444,7 @@ Then we need to add a view for the `sessions/new.html.erb`.
 touch app/views/sessions/new.html.erb
 ```
 
-Then very similarly to what did before for sign up we create a form for sign in.
+Then very similarly to what we did before for sign up, we create a form for sign in.
 
 ```html
 

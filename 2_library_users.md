@@ -155,6 +155,7 @@ class User < ActiveRecord::Base
   ...
 end
 ```
+
 And we create the reciprocal associations in our `Library` model.
 
 ```ruby
