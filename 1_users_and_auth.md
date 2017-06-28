@@ -241,6 +241,11 @@ Sign Up
 <% end %>
 ```
 
+When we try to visit `/users/new` we'll get an error because rails, in its infinite wisdom, has discovered a problem! Where will we post the form?! There's no route for that. So let's go ahead and appease rails by adding our form submission route:
+
+```
+post '/users', to: 'users#create'
+```
 
 Visit `/users/new` in your browser.  You should see a form. Inspect it to see that the `form_for` helper renders a form like the following (note the authenticity token):
 
@@ -283,7 +288,7 @@ It looks like this form is sending `POST /USERS`. Do we have a route for that?
 
 ### A POST to /users should create a new user in the database.
 
-We don't have that route, so set it up next.
+Make sure your routes looks like this:
 
 
 ```ruby
