@@ -10,10 +10,11 @@ class LibraryUsersController < ApplicationController
     render :index
   end
 
-  # adds user to library
+  # adds current user to selectd library from query params
   def create
+
     @library = Library.find(params[:library_id])
-    @library.users.push(current_user)
+    @library.users |= [current_user]
 
     redirect_to current_user
   end

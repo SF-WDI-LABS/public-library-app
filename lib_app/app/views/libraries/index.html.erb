@@ -3,6 +3,7 @@
     <h3><%= library.name %> - <%= link_to "homepage", library %></h3>
     <% if current_user %>
       <%= button_to "Join", library_users_path(library) %>
+      <%= button_to "Better Join", better_library_users_path, params: { library_id: library.id }  %>
     <% end %>
   </div>
   <br>
