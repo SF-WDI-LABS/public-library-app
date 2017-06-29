@@ -168,7 +168,6 @@ We now have the ability to view all libraries  and create new libraries.
 
 **Independent Practice**: Implement `libraries#show` on your own. You will need to create routes, controller actions, and views.
 
-Bonus: We recommend you also try to implement `edit`, `update`, `show`, and `delete`, but these aren't required for our initial setup.
 
 ### Associating Users and Libraries
 Before we get start letting users become library members,  we need to wire together all of our models to know about these associations. Use the `has_many` `through` pattern to set up the many-to-many association in the models.
@@ -306,12 +305,12 @@ We don't have an endpoint yet that allows a user to join a library, so let's add
 ```ruby
 Rails.application.routes.draw do
   ...
-  get '/users/:user_id/libraries', to: 'library_users#index', as: 'user_libraries'
   post '/libraries/:library_id/users', to: 'library_users#create', as: 'library_users'
 end
 
 ```
 
+> Note: We've chosen to structure this route so we can easily get the library id from the url, but there are many ways this route could be written. We just have to make sure we can access the correct library and the correct user in the controller so we connect the right entities.
 
 Then, we need to add a `create` action in `LibraryUsersController` that adds the user to the library.
 
@@ -365,7 +364,8 @@ Before moving on to bonuses, take a moment to make your site more user friendly.
 
 ### Bonuses
 
-* Can you add books to the application?
-    - For starters, just create a `Book` model and the associated views.
+* Implement `edit`, `update` and `delete` for libraries.
+* Add books to the application?
+    - For starters, just create a `Book` model and associated views.
 * Can you add books to the library?
     - What kind of a relationship is that? Where would foreign keys like `book_id` and `library_id` live in your database tables?
