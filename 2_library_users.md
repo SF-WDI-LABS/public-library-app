@@ -353,7 +353,7 @@ class UsersController < ApplicationController
 end
 ```
 
-This `before_action` line means there must be a `logged_in?` method somewhere that will be called before the show action is run.  Add a `logged_in?` helper method to the sessions helper to check whether there is a current user.
+This `before_action` line means there must be a `require_login` method somewhere that will be called before the show action is run.  Add a `require_login` helper method to the sessions helper to ensure there is a current user.
 
 
 What other endpoints should be protected? Should an unauthenticated user be able to CRUD resources? Think about POST, PUT, and DELETE!
