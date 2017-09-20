@@ -364,6 +364,7 @@ Before moving on to bonuses, take a moment to make your site more user friendly.
 
 ### Bonuses
 
+* Hide the "Join" button on Library show page if the logged in user has already joined the library
 * Implement `edit`, `update` and `destroy` for libraries.
 * Add books to the application
     - For starters, create a `Book` model and all its associated views.
