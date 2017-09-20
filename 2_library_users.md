@@ -364,8 +364,8 @@ Before moving on to bonuses, take a moment to make your site more user friendly.
 
 ### Bonuses
 
-* Implement `edit`, `update` and `delete` for libraries.
-* Add books to the application?
-    - For starters, just create a `Book` model and associated views.
-* Can you add books to the library?
+* Implement `edit`, `update` and `destroy` for libraries.
+* Add books to the application
+    - For starters, create a `Book` model and all its associated views.
+    - Set up associations so you can add Books to a Library.
     - What kind of a relationship is that? Where would foreign keys like `book_id` and `library_id` live in your database tables?
