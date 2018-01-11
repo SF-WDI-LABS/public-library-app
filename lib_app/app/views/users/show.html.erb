@@ -1,3 +1,8 @@
 <div>
   Welcome, <%= @user.email %>
 </div>
+
+You're a member of these libraries:
+<% @user.libraries.each do |lib| %>
+  <%= lib.name %>
+<% end %>

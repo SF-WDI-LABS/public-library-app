@@ -1,0 +1,15 @@
+<h1>libraries index</h1>
+
+<% @libraries.each do |lib| %>
+  <h3><%= lib.name %></h3>
+  <p>
+    a beautiful library on <%= lib.floor_count %> floors with <%= lib.users.count %> users
+  </p>
+  <% if lib.users.member?(current_user) %>
+    <p>you're a member!</p>
+  <% elsif current_user %>
+    <%= button_to "Join", memberships_path, params: {'membership[user_id]' => current_user.id, 'membership[library_id]' => lib.id} %>
+  <% else %>
+    sign in to join this library!
+  <% end %>
+<% end %>
